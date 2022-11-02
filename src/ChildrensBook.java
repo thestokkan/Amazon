@@ -1,17 +1,24 @@
 public class ChildrensBook extends Book {
-  private String recommendedAge;
+  private String recommendedFromAge;
 
-  public ChildrensBook(long productId, int price, String title, String author,
-                       String recommendedAge) {
-    super(productId, price, title, author);
-    this.recommendedAge = recommendedAge;
+  public ChildrensBook(long productId, int price, String type, String title,
+                       String author, String recommendedFromAge) {
+    super(productId, price, type, title, author);
+    this.recommendedFromAge = recommendedFromAge;
   }
 
-  public String getRecommendedAge() {
-    return recommendedAge;
+  @Override
+  public void printDetails() {
+    super.printDetails();
+    System.out.println("Recommended from: " + recommendedFromAge);
   }
 
-  public void setRecommendedAge(String recommendedAge) {
-    this.recommendedAge = recommendedAge;
+
+  public String getRecommendedFromAge() {
+    return recommendedFromAge;
+  }
+
+  public void setRecommendedFromAge(String recommendedFromAge) {
+    this.recommendedFromAge = recommendedFromAge;
   }
 }

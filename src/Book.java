@@ -2,10 +2,22 @@ public class Book extends Product {
   private final String title;
   private final String author;
 
-  public Book(long productId, int price, String title, String author) {
-    super(productId, price);
+  public Book(long productId, int price, String type, String title,
+              String author) {
+    super(productId, price, type);
     this.title = title;
     this.author = author;
+  }
+
+  @Override
+  public void printDetails() {
+    super.printDetails();
+    printBookDetails();
+  }
+
+  public void printBookDetails() {
+    System.out.println("Title: " + title);
+    System.out.println("Author: " + author);
   }
 
   @Override
@@ -19,10 +31,5 @@ public class Book extends Product {
 
   public String getAuthor() {
     return author;
-  }
-
-  public void printBookDetails() {
-    System.out.printf("%nTitle: %s%nAuthor: %s%nPrice: $%d%n", title,
-                      author, price);
   }
 }

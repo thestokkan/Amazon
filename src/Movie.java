@@ -6,30 +6,37 @@ public class Movie extends Product {
   private String director;
 
 
-  public Movie(long productId, int price, String title, MovieGenre genre) {
-    super(productId, price);
+  public Movie(long productId, int price, String type, String title,
+               MovieGenre genre) {
+    super(productId, price, type);
     this.title = title;
     this.genre = genre;
   }
 
-  public Movie(long productId, int price, String title, MovieGenre genre,
-               String director) {
-    this(productId, price, title, genre);
+  public Movie(long productId, int price, String type, String title,
+               MovieGenre genre, String director) {
+    super(productId, price, type);
+    this.title = title;
+    this.genre = genre;
     this.director = director;
   }
 
   public boolean matchID(long productId) {
     return this.productId == productId;
   }
+  @Override
+  public void printDetails() {
+    super.printDetails();
+    printMovieDetails();
+  }
 
   public void printMovieDetails() {
-    System.out.printf("Title: %s%nGenre: %s%nPrice: $%d%nProduct ID: %d%n",
-                      title,
-                      genre, price, productId);
+    System.out.println("Title: " + title);
+    System.out.println("Genre: " + genre);
+
     if (director != null) {
-      System.out.printf("Director: %s", director);
+      System.out.println("Director: " + director);
     }
-    System.out.println();
   }
 
   public String getTitle() {
