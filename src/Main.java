@@ -9,7 +9,7 @@ public class Main {
     Book book1 = new Book(2001, 45, "Book", "The great misfortune", "Noah " +
                                                                    "Lingiah");
     Book book2 = new Book(2002, 8, "Book", "Many strangers", "Liz Mangan");
-    Book book3 =
+    Book childrensBook1 =
             new ChildrensBook(2003, 32, "Book", "Peter Rabbit", "Beatrix " +
                                                                "Potter",
                               "4 years");
@@ -24,7 +24,7 @@ public class Main {
     List<Product> products = new ArrayList<>();
     products.add(book1);
     products.add(book2);
-    products.add(book3);
+    products.add(childrensBook1);
     products.add(movie1);
     products.add(movie2);
     products.add(movie3);
