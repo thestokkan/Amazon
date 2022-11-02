@@ -29,17 +29,6 @@ public class Main {
     products.add(movie2);
     products.add(movie3);
 
-    // Using class-specific printDetails
-//    System.out.println("\n=== PRODUCT DETAILS ===");
-//    for (Product p : products) {
-//      if (p instanceof Book) {
-//        ((Book) p).printBookDetails();
-//      } else if (p instanceof Movie) {
-//        ((Movie) p).printMovieDetails();
-//      }
-//    }
-
-    // Using generic printDetails (overridden in specific product classes)
     System.out.println("\n=== PRODUCT DETAILS ===");
     for (Product p : products) {
       p.printDetails();
