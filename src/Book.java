@@ -1,12 +1,16 @@
-public class Book {
+public class Book extends Product {
   private final String title;
   private final String author;
-  private int price;
 
-  public Book(String title, String author, int price) {
+  public Book(long productId, int price, String title, String author) {
+    super(productId, price);
     this.title = title;
     this.author = author;
-    this.price = price;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("%s, %s, %d", title, author, price);
   }
 
   public String getTitle() {
@@ -15,14 +19,6 @@ public class Book {
 
   public String getAuthor() {
     return author;
-  }
-
-  public int getPrice() {
-    return price;
-  }
-
-  public void setPrice(int price) {
-    this.price = price;
   }
 
   public void printBookDetails() {

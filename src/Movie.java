@@ -1,23 +1,20 @@
 import java.util.List;
 
-public class Movie {
+public class Movie extends Product {
   private final String title;
   private final MovieGenre genre;
-  private int price;
   private String director;
-  private long productId;
 
 
-  public Movie(String title, MovieGenre genre, int price, long productId) {
+  public Movie(long productId, int price, String title, MovieGenre genre) {
+    super(productId, price);
     this.title = title;
     this.genre = genre;
-    this.price = price;
-    this.productId = productId;
   }
 
-  public Movie(String title, MovieGenre genre, int price, long productId,
+  public Movie(long productId, int price, String title, MovieGenre genre,
                String director) {
-    this(title, genre, price, productId);
+    this(productId, price, title, genre);
     this.director = director;
   }
 
@@ -42,21 +39,4 @@ public class Movie {
   public MovieGenre getGenre() {
     return genre;
   }
-
-  public int getPrice() {
-    return price;
-  }
-
-  public void setPrice(int price) {
-    this.price = price;
-  }
-
-  public long getProductId() {
-    return productId;
-  }
-
-  public void setProductId(long productId) {
-    this.productId = productId;
-  }
-
 }
