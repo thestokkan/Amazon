@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
@@ -20,19 +19,20 @@ public class Main {
     Movie movie3 = new Movie("Lord of the Rings", MovieGenre.ACTION, 10, 1003,
                              "James Cameron");
 
-    List<Movie> movies = new ArrayList<Movie>();
-    movies.add(movie1);
-    movies.add(movie2);
-    movies.add(movie3);
+    Map<Long, Movie> movies = new HashMap<>();
+    movies.put(movie1.getProductId(), movie1);
+    movies.put(movie2.getProductId(), movie2);
+    movies.put(movie3.getProductId(), movie3);
 
-    for (Movie movie : movies) {
-      movie.printMovieDetails();
+    for (long key : movies.keySet()) {
+      movies.get(key).printMovieDetails();
     }
 
     // Search for movie by ID
     long idToFind = 1005;
     System.out.println("\n\nSearching for movie with ID " + idToFind);
     Movie movieToFind = findMovieById(idToFind, movies);
+
     if (movieToFind != null) {
       System.out.println("Movie found: ");
       movieToFind.printMovieDetails();
@@ -42,11 +42,11 @@ public class Main {
 
   }
 
-  public static Movie findMovieById(long productId, List<Movie>  movies) {
-    for (Movie movie :
-            movies) {
-      if (movie.matchID(productId)) {
-        return movie;
+  public static Movie findMovieById(long productId, Map<Long, Movie>  movies) {
+    for (long key :
+            movies.keySet()) {
+      if (movies.get(key).matchID(productId)) {
+        return movies.get(key);
       }
     }
     return null;
