@@ -1,8 +1,6 @@
-import java.util.List;
-
 public class Movie extends Product {
-  private final String title;
-  private final MovieGenre genre;
+  protected final String title;
+  protected final MovieGenre genre;
 
   public Movie(long productId, int price, String type, String title,
                MovieGenre genre) {

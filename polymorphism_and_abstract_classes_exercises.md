@@ -36,9 +36,9 @@ Kan vi gjøre dette på en annen måte ved hjelp av arv og polymorfisme?
 
 Hint:
 
-Lag en ny klasse, MovieWithDirector, som arver fra Movie. Flytt variabelen director og gettere og settere fra Movie til MovieWithDirector.
+~~Lag en ny klasse, MovieWithDirector, som arver fra Movie. Flytt variabelen director og gettere og settere fra Movie til MovieWithDirector.~~
 
-La konstruktøren kun ta productId, title, genre og price i Movie. Legg til en konstruktør i MovieWithDirector som tar de samme parameterene og også en String director.Kall superklassens konstruktør med alle parameterene, untatt director, og tilordne director-parameteren til instansvariabelen.
+~~La konstruktøren kun ta productId, title, genre og price i Movie. Legg til en konstruktør i MovieWithDirector som tar de samme parameterene og også en String director.Kall superklassens konstruktør med alle parameterene, untatt director, og tilordne director-parameteren til instansvariabelen.~~
 
 Skriv ut kun variabelene som fortsatt er i Movie-klassen i printDetails-metoden.
 
@@ -48,7 +48,7 @@ Hvis det er et problem med å aksessere title og genre fra MovieWithDirector må
 
 Alternativt kan du aksessere verdiene ved hjelp av get-metodene.
 
-Bruk MovieWithDirector i main-metoden.
+~~Bruk MovieWithDirector i main-metoden.~~
 
 Kjør programmet. Fungerer alt? Skriver kallet til printDetails ut de korrekte variableen. Variabelene som finnes i Movie når det er en Movie, og alle variablene, inkludert director, når det er et MovieWithDirector-objekt?
 
