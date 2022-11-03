@@ -1,4 +1,4 @@
-public class Movie implements Product {
+public class Movie implements Product, Comparable<Movie> {
   private final long productId;
   private int price;
   private final String type;
@@ -16,6 +16,12 @@ public class Movie implements Product {
 
   public boolean matchID(long productId) {
     return this.productId == productId;
+  }
+
+  @Override
+  public int compareTo(Movie movie) {
+      if (this.productId == movie.productId) return 0;
+      return this.productId < movie.productId ? -1 : 1;
   }
 
   @Override

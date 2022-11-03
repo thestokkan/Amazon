@@ -52,3 +52,40 @@ public class Book implements Product {
 Prøv å kjør programmet. Det skal fungere og som du kan se er det fortsatt ok å håndtere produkter som typen Product, selv om dette nå er et interface og ikke en klasse.
 
 Et interface er en form for kontrakt som tvinger klassen som implementerer det til å oppfylle kontrakten - dvs. at den må implementere alle metodene det definerer.
+
+# Oppgave 3
+Vi skal nå bruke et eksisterende interface for å bruke en metode i klassen Collections som hjelper å sortere objekter i en liste.
+
+Siden Product nå er et interface, så vil vi her kun sortere en liste av Movie-objekter.
+
+Legg til noen filmer til en liste og legg dem til i en rekkefølge som ikke er avhengig av productId.
+
+Du kan legge til alle Movie-objektene fra denne listen til produkt-listen ved å bruke metoden addAll:
+
+List<Movie> movies = new ArrayList<>();
+movies.add(ghostBusters);
+movies.add(shawshank);
+movies.add(lordOfTheRings);
+
+products.addAll(movies);
+For å bruke metoden sort i Collections-klassen, legg til denne linjen:
+
+Collections.sort(movies);
+Som du vil se så vil ikke denne metoden akseptere vår liste med filmer siden den forventer en liste med Comparable. Comparable er et interface som tvinger klasser som implementerer det til å implementere metoden compareTo. Ved å definere metoden sort til å ta en liste med Comparable, så vet metoden at den alltid kan kalle compareTo på alle objektene i listen.
+
+Interfacet Comparable trenger typen til klassen på samme måten som List eller Map, slik: Comparable<Movie>.
+
+La vår Movie-klasse implementere Comparable i tillegg til Product. En klasse kan implementere mange interfaces ved å separere dem med komma:
+
+public class Movie implements Product, Comparable<Movie> {
+IntelliJ vil nå indikere at Movie-klassen må implementere compareTo for å oppfylle kontrakten til Comparable.
+
+La oss gjøre dette ved å legge til metoden:
+
+@Override
+public int compareTo(Movie movie) {
+Denne metoden returnerer en int. La den være 0 hvis productId er lik productId i Movie-parameteren. Den skal være -1 hvis den er mindre enn productId i Movie-parameteren, og ellers 1.
+
+Dette er implementasjonen av compareTo. Den returner -1, 0 eller 1 for å indikere om objektet skal anses som mindre enn, lik eller større enn objektet som sendes til metoden.
+
+Prøv å implementer denne funksjonaliteten. Kommenter ut Collections.sort og sammenlign resultatet med og uten sortering.
