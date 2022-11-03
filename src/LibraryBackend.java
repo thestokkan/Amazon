@@ -6,9 +6,9 @@ public class LibraryBackend {
                            String type, String title, MovieGenre genre) {
     try {
       return new Movie(productId, price, type, title, genre);
-    } catch (Exception e) {
-        e.printStackTrace();
-        return null;
+    } catch (IncorrectProductIdException e) {
+      System.err.println(e.getMessage());
+      return null;
     }
   }
 
@@ -17,7 +17,7 @@ public class LibraryBackend {
                                        String director) {
     try {
       return new MovieWithDirector(productId, price, type, title, genre, director);
-    } catch (Exception e) {
+    } catch (IncorrectProductIdException e) {
       System.err.println(e.getMessage());
       return null;
     }
@@ -27,7 +27,7 @@ public class LibraryBackend {
                            String type, String title, String author) {
     try {
       return new Book(productId, price, type, title, author);
-    } catch (Exception e) {
+    } catch (IncorrectProductIdException e) {
       System.err.println(e.getMessage());
       return null;
     }
@@ -38,7 +38,7 @@ public class LibraryBackend {
                                   String recommendedFromAge) {
     try {
       return new ChildrensBook(productId, price, type, title, author, recommendedFromAge);
-    } catch (Exception e) {
+    } catch (IncorrectProductIdException e) {
       System.err.println(e.getMessage());
       return null;
     }

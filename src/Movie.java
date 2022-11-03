@@ -6,12 +6,11 @@ public class Movie implements Product, Comparable<Movie> {
   protected final MovieGenre genre;
 
   public Movie(long productId, int price, String type, String title,
-               MovieGenre genre) throws Exception {
+               MovieGenre genre) throws IncorrectProductIdException {
     if (productId > 0) {
       this.productId = productId;
     } else {
-      throw new Exception("Product ID cannot be negative. Movie not created " +
-                          "for ID " + productId);
+      throw new IncorrectProductIdException(productId);
     }
     this.price = price;
     this.type = type;

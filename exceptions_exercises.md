@@ -32,3 +32,37 @@ Alt er ok med Book, men hva med main-metoden nå?
 Nå må vi håndtere denne i main-metoden. Legg koden der objektet opprettes i en try-catch. Håndter exception ved å skrive ut stacktrace.
 
 Nå skal programmet kjøre uten å krasje, og kun skrive ut stacktrace hvis en Book eller Movie blir opprettet med en negativ productId.
+
+# Oppgave 4
+Vi vil lage en egen Exception for å håndtere tilfellet med ukurrant productId slik at vi kan ta vare på productId som ble forsøkt brukt og skrive dette ut når vi catcher denne i main-metoden.
+
+Lag en ny klasse med navnet IncorrectProductIdException som arver fra 
+Exception.
+
+Lag en instansvariabel av typen long, med navnet incorrectNumber og en konstruktør som tar en parameter av samme type og tilordner dette til variabelen.
+
+Overstyr String getMessage() og returner en melding om at tallet er feil, og inkluder tallet i meldingen.
+
+I konstruktøren til Book, kast IncorrectProductIdException istedet for Exception.
+
+Bruk konstruktøren og send et ugyldig productId som parameter. Modifiser signaturen til konstruktøren slik at den indikerer at den kaster en IncorrectProductIdException og ikke Exception. Dette gjør at vi kun må catche denne typen, og ikke evt. andre typer som arver fra Exception.
+
+Forsøk å lage nye bøker med konstruktøren til Book. Håndter exceptions ved å skrive ut en melding:
+
+catch (IncorrectProductIdException e) {
+System.out.println(e.getMessage());
+}
+Forsøk å kjøre koden. Ser du meldingen? Hva tenker du om å bruke exceptions? Hvor kan dette være nyttig?
+
+# Oppgave 5
+Opprett en ny klasse med en main-metode (slik at du kan kjøre klassen som et program).
+
+Legg til en statisk variabel i klassen som du kaller "counter" og initialiser den til 0.
+
+Lag en ny (statisk) metode i klassen som du kaller "forever". Metoden skal ikke ta noen parametere. Kall denne metoden fra main-metoden din.
+
+I metoden øker du verdien av "counter" til 1 og skriver ut verdien.
+
+Til slutt kaller du på den samme metoden fra denne metoden. Altså, metoden skal kalle seg selv. Hva skjer når du kjører programmet?
+
+Hva blir verdien av counter?

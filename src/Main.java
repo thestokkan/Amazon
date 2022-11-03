@@ -35,21 +35,23 @@ public class Main {
 
     products.addAll(movieList);
 
-//    System.out.println("\n=== PRODUCT DETAILS ===");
-//    for (Product p : products) {
-//      p.printDetails();
-//      System.out.println();
-//    }
-
-    System.out.println("\n=== MOVIE DETAILS ===");
-//    Collections.sort(movieList);
-
-    for (Product m : movieList) {
-      if (m != null) {
-        m.printDetails();
+    System.out.println("\n=== PRODUCT DETAILS ===");
+    for (Product p : products) {
+      if (p != null) {
+        p.printDetails();
         System.out.println();
       }
     }
+
+//    System.out.println("\n=== MOVIE DETAILS ===");
+//    Collections.sort(movieList);
+
+//    for (Product m : movieList) {
+//      if (m != null) {
+//        m.printDetails();
+//        System.out.println();
+//      }
+//    }
 
 //    // Movies in hashmap
 //    Map<Long, Movie> movies = new HashMap<>();

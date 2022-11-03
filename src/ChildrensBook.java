@@ -3,7 +3,7 @@ public class ChildrensBook extends Book {
 
   public ChildrensBook(long productId, int price, String type, String title,
                        String author, String recommendedFromAge)
-          throws Exception {
+          throws IncorrectProductIdException {
     super(productId, price, type, title, author);
     this.recommendedFromAge = recommendedFromAge;
   }

@@ -6,12 +6,11 @@ public class Book implements Product, Comparable<Book> {
   private final String author;
 
   public Book(long productId, int price, String type, String title,
-              String author) throws Exception {
+              String author) throws IncorrectProductIdException {
     if (productId >= 0) {
       this.productId = productId;
     } else {
-      throw new Exception("Product ID cannot be negative. Book not created " +
-                          "for ID " + productId);
+      throw new IncorrectProductIdException(productId);
     }
 
     this.price = price;
