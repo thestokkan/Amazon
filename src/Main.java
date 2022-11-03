@@ -22,25 +22,27 @@ public class Main {
                                          MovieGenre.ACTION,
                                          "James Cameron");
 
-    List<Product> products = new ArrayList<>();
-    products.add(book1);
-    products.add(book2);
-    products.add(childrensBook1);
+    List<Book> books = new ArrayList<>();
+    books.add(book1);
+    books.add(book2);
+    books.add(childrensBook1);
 
-    // Add movies to list using Collection interface
+    while (books.remove(null));
+
     List<Movie> movieList = new ArrayList<>();
     movieList.add(movie3);
     movieList.add(movie1);
     movieList.add(movie2);
 
-    products.addAll(movieList);
+    while (movieList.remove(null));
+
+    Set<Product> products = new HashSet<>(movieList);
+    products.addAll(books);
 
     System.out.println("\n=== PRODUCT DETAILS ===");
     for (Product p : products) {
-      if (p != null) {
         p.printDetails();
         System.out.println();
-      }
     }
 
 //    System.out.println("\n=== MOVIE DETAILS ===");
