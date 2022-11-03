@@ -11,7 +11,9 @@ public class Book extends Product {
 
   @Override
   public void printDetails() {
-    super.printDetails();
+    System.out.println("ID: " + productId);
+    System.out.println("Type: " + type);
+    System.out.println("Price: " + price);
     printBookDetails();
   }
 

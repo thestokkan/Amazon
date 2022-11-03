@@ -9,11 +9,7 @@ public abstract class Product {
     this.type = type;
   }
 
-  public void printDetails() {
-    System.out.println("ID: " + productId);
-    System.out.println("Type: " + type);
-    System.out.println("Price: " + price);
-  }
+  public abstract void printDetails();
 
   public long getProductId() {
     return productId;
