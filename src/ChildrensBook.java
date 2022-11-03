@@ -13,7 +13,6 @@ public class ChildrensBook extends Book {
     System.out.println("Recommended from: " + recommendedFromAge);
   }
 
-
   public String getRecommendedFromAge() {
     return recommendedFromAge;
   }

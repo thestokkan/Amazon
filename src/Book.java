@@ -1,10 +1,15 @@
-public class Book extends Product {
+public class Book implements Product {
+  private final long productId;
+  private int price;
+  private final String type;
   private final String title;
   private final String author;
 
   public Book(long productId, int price, String type, String title,
               String author) {
-    super(productId, price, type);
+    this.productId = productId;
+    this.price = price;
+    this.type = type;
     this.title = title;
     this.author = author;
   }
@@ -33,5 +38,13 @@ public class Book extends Product {
 
   public String getAuthor() {
     return author;
+  }
+
+  public int getPrice() {
+    return price;
+  }
+
+  public void setPrice(int price) {
+    this.price = price;
   }
 }

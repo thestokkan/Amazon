@@ -1,4 +1,4 @@
-Oppgave 1
+# Oppgave 1
 ~~Hva skjer om vi fjerner printDetails fra Movie-klassen? Prøv å endre navnet til printDetails2 eller noe annet.~~
 
 ~~IntelliJ vil markere @Override-annotasjonen som en feil, siden metoden ikke overstyrer noen metode i superklassen.  Fjern annotasjonen.~~
@@ -22,10 +22,10 @@ Hvis navnet fortsatt er endret i Movie så vil IntelliJ nå advare om at klassen
 
 Vi har nå et program som kaller printDetails på alle typer produkter og som tvinger alle subklasser til å implementere metoden. Dette gjøres ved å bruke en klasse markert som abstract og en metode markert som abstract.
 
-Oppgave 2
-Fjern alle andre metoder i Product, bortsett fra printDetails.
+# Oppgave 2
+~~Fjern alle andre metoder i Product, bortsett fra printDetails.~~
 
-Hvis du har gettere og setter for productId og price, fjern dem. Hvis du bruker dem andre steder, legg dem istedet til Book og Movie-klassene.
+~~Hvis du har gettere og setter for productId og price, fjern dem. Hvis du bruker dem andre steder, legg dem istedet til Book og Movie-klassene.~~
 
 Du skal nå ha en Product-klasse som er abstract, med kun abstrakte metoder (printDetails). Slik:
 
@@ -41,7 +41,7 @@ Dette vil gjøre det mulig å håndtere alle produkter på en generell, måte, m
 
 Hint:
 
-Endre abstract class i Product til interface slik:
+~~Endre abstract class i Product til interface slik:~~
 
 public interface Product
 Fjern variablene fra Product-klassen og legg dem til Book og Movie.

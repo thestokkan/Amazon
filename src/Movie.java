@@ -1,10 +1,15 @@
-public class Movie extends Product {
+public class Movie implements Product {
+  private final long productId;
+  private int price;
+  private final String type;
   protected final String title;
   protected final MovieGenre genre;
 
   public Movie(long productId, int price, String type, String title,
                MovieGenre genre) {
-    super(productId, price, type);
+    this.productId = productId;
+    this.price = price;
+    this.type = type;
     this.title = title;
     this.genre = genre;
   }
@@ -32,5 +37,16 @@ public class Movie extends Product {
 
   public MovieGenre getGenre() {
     return genre;
+  }
+
+  public int getPrice() {
+    return price;
+  }
+  public void setPrice(int price) {
+    this.price = price;
+  }
+
+  public long getProductId() {
+    return productId;
   }
 }
