@@ -12,7 +12,6 @@ public class Movie implements Product, Comparable<Movie> {
     } catch (IllegalArgumentException e) {
         e.printStackTrace();
     }
-
     this.price = price;
     this.type = type;
     this.title = title;

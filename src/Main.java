@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
   public static void main(String[] args) {
 
-    Book book1 = new Book(2001, 45, "Book", "The great misfortune", "Noah " +
+    Book book1 = new Book(-1, 45, "Book", "The great misfortune", "Noah " +
                                                                    "Smith");
     Book book2 = new Book(2002, 8, "Book", "Many strangers", "Liz Mangan");
     Book childrensBook1 =
