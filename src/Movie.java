@@ -1,5 +1,5 @@
 public class Movie implements Product, Comparable<Movie> {
-  private final long productId;
+  private long productId;
   private int price;
   private final String type;
   protected final String title;
@@ -7,7 +7,12 @@ public class Movie implements Product, Comparable<Movie> {
 
   public Movie(long productId, int price, String type, String title,
                MovieGenre genre) {
-    this.productId = productId;
+    try {
+        setProductId(productId);
+    } catch (IllegalArgumentException e) {
+        e.printStackTrace();
+    }
+
     this.price = price;
     this.type = type;
     this.title = title;
@@ -35,6 +40,14 @@ public class Movie implements Product, Comparable<Movie> {
   public void printMovieDetails() {
     System.out.println("Title: " + title);
     System.out.println("Genre: " + genre);
+  }
+
+  public void setProductId(long productId) {
+    if (productId >= 0) {
+      this.productId = productId;
+    } else {
+      throw new IllegalArgumentException("Product ID cannot be negative");
+    }
   }
 
   public String getTitle() {

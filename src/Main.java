@@ -4,14 +4,15 @@ public class Main {
   public static void main(String[] args) {
 
     Book book1 = new Book(2001, 45, "Book", "The great misfortune", "Noah " +
-                                                                   "Lingiah");
+                                                                   "Smith");
     Book book2 = new Book(2002, 8, "Book", "Many strangers", "Liz Mangan");
     Book childrensBook1 =
             new ChildrensBook(2003, 32, "Book", "Peter Rabbit", "Beatrix " +
                                                                "Potter",
                               "4 years");
 
-    Movie movie1 = new Movie(1001, 8, "Movie", "Hello Dolly", MovieGenre.COMEDY);
+    Movie movie1 = new Movie(-10000, 8, "Movie", "Hello Dolly",
+                             MovieGenre.COMEDY);
     Movie movie2 =
             new Movie(1002, 9, "Movie",  "Crisis upon crisis", MovieGenre.DOCUMENTARY);
     Movie movie3 = new MovieWithDirector(1003, 10, "Movie", "Lord of the Rings",
