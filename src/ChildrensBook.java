@@ -2,7 +2,8 @@ public class ChildrensBook extends Book {
   private String recommendedFromAge;
 
   public ChildrensBook(long productId, int price, String type, String title,
-                       String author, String recommendedFromAge) {
+                       String author, String recommendedFromAge)
+          throws Exception {
     super(productId, price, type, title, author);
     this.recommendedFromAge = recommendedFromAge;
   }

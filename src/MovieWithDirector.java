@@ -2,7 +2,7 @@ public class MovieWithDirector extends Movie {
   private String director;
 
   public MovieWithDirector(long productId, int price, String type, String title,
-                           MovieGenre genre, String director) {
+                           MovieGenre genre, String director) throws Exception {
     super(productId, price, type, title, genre);
     this.director = director;
   }

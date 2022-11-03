@@ -1,4 +1,4 @@
-public class Book implements Product {
+public class Book implements Product, Comparable<Book> {
   private long productId;
   private int price;
   private final String type;
@@ -6,12 +6,14 @@ public class Book implements Product {
   private final String author;
 
   public Book(long productId, int price, String type, String title,
-              String author) {
-    try {
-      setProductId(productId);
-    } catch (Exception e) {
-      e.printStackTrace();
+              String author) throws Exception {
+    if (productId >= 0) {
+      this.productId = productId;
+    } else {
+      throw new Exception("Product ID cannot be negative. Book not created " +
+                          "for ID " + productId);
     }
+
     this.price = price;
     this.type = type;
     this.title = title;
@@ -32,16 +34,16 @@ public class Book implements Product {
   }
 
   @Override
-  public String toString() {
-    return String.format("%s, %s, %d", title, author, price);
+  public int compareTo(Book book) {
+    if (book != null) {
+      return Long.compare(this.productId, book.productId);
+    }
+    return -1;
   }
 
-  public void setProductId(long productId) throws Exception {
-    if (productId >= 0) {
-      this.productId = productId;
-    } else {
-      throw new Exception("Negative Product ID not allowed.");
-    }
+  @Override
+  public String toString() {
+    return String.format("%s, %s, %d", title, author, price);
   }
 
   public String getTitle() {

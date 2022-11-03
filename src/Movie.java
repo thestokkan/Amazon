@@ -1,16 +1,17 @@
 public class Movie implements Product, Comparable<Movie> {
-  private long productId;
+  private final long productId;
   private int price;
   private final String type;
   protected final String title;
   protected final MovieGenre genre;
 
   public Movie(long productId, int price, String type, String title,
-               MovieGenre genre) {
-    try {
-        setProductId(productId);
-    } catch (IllegalArgumentException e) {
-        e.printStackTrace();
+               MovieGenre genre) throws Exception {
+    if (productId > 0) {
+      this.productId = productId;
+    } else {
+      throw new Exception("Product ID cannot be negative. Movie not created " +
+                          "for ID " + productId);
     }
     this.price = price;
     this.type = type;
@@ -24,8 +25,12 @@ public class Movie implements Product, Comparable<Movie> {
 
   @Override
   public int compareTo(Movie movie) {
+    if (movie != null) {
+
       if (this.productId == movie.productId) return 0;
-      return this.productId < movie.productId ? -1 : 1;
+      if (this.productId > movie.productId) return 1;
+    }
+    return -1;
   }
 
   @Override
@@ -39,14 +44,6 @@ public class Movie implements Product, Comparable<Movie> {
   public void printMovieDetails() {
     System.out.println("Title: " + title);
     System.out.println("Genre: " + genre);
-  }
-
-  public void setProductId(long productId) {
-    if (productId >= 0) {
-      this.productId = productId;
-    } else {
-      throw new IllegalArgumentException("Product ID cannot be negative");
-    }
   }
 
   public String getTitle() {
