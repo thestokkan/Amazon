@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
@@ -25,13 +22,26 @@ public class Main {
     products.add(book1);
     products.add(book2);
     products.add(childrensBook1);
-    products.add(movie1);
-    products.add(movie2);
-    products.add(movie3);
 
-    System.out.println("\n=== PRODUCT DETAILS ===");
-    for (Product p : products) {
-      p.printDetails();
+    // Add movies to list using Collection interface
+    List<Movie> movieList = new ArrayList<>();
+    movieList.add(movie3);
+    movieList.add(movie1);
+    movieList.add(movie2);
+
+    products.addAll(movieList);
+
+//    System.out.println("\n=== PRODUCT DETAILS ===");
+//    for (Product p : products) {
+//      p.printDetails();
+//      System.out.println();
+//    }
+
+    System.out.println("\n=== MOVIE DETAILS ===");
+    Collections.sort(movieList);
+
+    for (Product m : movieList) {
+      m.printDetails();
       System.out.println();
     }
 
